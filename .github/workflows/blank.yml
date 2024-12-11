@@ -8,6 +8,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - run: |
-          choco install conan /PathType:'User'
+          choco install conan --params "/PathType:'User''
       - run: |
           conan --version
