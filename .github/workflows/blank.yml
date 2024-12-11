@@ -10,6 +10,10 @@ jobs:
       - run: |
           choco install conan --params "/PathType:'User'"
       - run: |
-          echo $env:PATH
-          C:\Program Files\Conan\conan.exe --version
+          $env:PATH -split ';'
+      - run: |
+          Get-ChildItem -Recurse -Path "C:\Program Files\Conan"
+      - run: |
+          & "C:\Program Files\Conan\conan.exe" --version
+      - run: |
           conan --version
